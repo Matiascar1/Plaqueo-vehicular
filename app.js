@@ -1,19 +1,46 @@
-const $=s=>document.querySelector(s);let currentPlate='ABC-123',allOpen=false;
-const sources={sunarp:{name:'SUNARP',url:'https://www.gob.pe/358-consultar-los-datos-de-un-vehiculo-consulta-vehicular'},mtc:{name:'MTC',url:'https://sistemas.mtc.gob.pe/aplicaciones/consulta-de-inspeccion-tecnica-vehicular/'},apeseg:{name:'APESEG',url:'https://www.apeseg.org.pe/'},sutran:{name:'SUTRAN',url:'https://www.sutran.gob.pe/consultas/record-de-infracciones/record-de-infracciones/'},sat:{name:'SAT Lima',url:'https://www.sat.gob.pe/'}};
-function normalize(v){const r=v.toUpperCase().replace(/[^A-Z0-9]/g,'');if(r.length<5||r.length>7)return null;return r.length===6?`${r.slice(0,3)}-${r.slice(3)}`:r}
-function items(d){return[{l:'Ficha técnica',v:d?'Toyota Hilux · Ficticia':'No consultada',s:'SUNARP',x:0,c:d?'demo':'unknown'},{l:'Titularidad vigente',v:'No consultada',s:'SUNARP · Requiere captcha',x:1,c:'unknown'},{l:'SOAT',v:'No consultado',s:'APESEG',x:2,c:'unknown'},{l:'Inspección técnica',v:'No consultada',s:'MTC · CITV',x:3,c:'unknown'},{l:'Papeletas municipales',v:'No consultadas',s:'Municipalidades / SAT',x:4,c:'unknown'},{l:'SUTRAN',v:'No consultado',s:'Récord de infracciones',x:5,c:'unknown'},{l:'Impuesto vehicular',v:'No consultado',s:'SAT correspondiente',x:4,c:'unknown'},{l:'Cargas registrales',v:'Requiere publicidad',s:'SUNARP',x:1,c:'unknown'}]}
-function btn(k){let s=sources[k];return `<button class="source-action" data-source="${k}">Copiar ${currentPlate} y abrir ${s.name} ↗</button>`}
-function sections(d){return[
- ['A','Ficha técnica SUNARP',d?'Ejemplo ficticio':'No consultada',`${d?'<div class="fact-grid"><div class="fact"><span>Marca</span><b>TOYOTA · Ficticia</b></div><div class="fact"><span>Modelo</span><b>HILUX · Ficticio</b></div><div class="fact"><span>Año</span><b>2019 · Demo</b></div><div class="fact"><span>Color</span><b>BLANCO · Demo</b></div></div>':'<p>No se consultó información técnica para esta placa.</p>'}<p class="data-note">SUNARP informa marca, modelo, VIN, motor, color, titular, sede, estado y anotación de robo. Requiere captcha.</p>${btn('sunarp')}`],
- ['B','Titularidad y cargas','No consultadas',`<div class="check-row"><span>Titular vigente</span><b class="unknown">No consultado</b></div><div class="check-row"><span>Anotación de robo</span><b class="unknown">No consultada</b></div><div class="check-row"><span>Gravámenes</span><b class="unknown">Requieren publicidad registral</b></div><p class="data-note">La consulta gratuita es referencial y no informa todos los gravámenes.</p>${btn('sunarp')}`],
- ['C','SOAT','No consultado',`<div class="check-row"><span>Certificado activo</span><b class="unknown">No consultado</b></div><div class="check-row"><span>Aseguradora y vigencia</span><b class="unknown">No disponibles</b></div>${btn('apeseg')}`],
- ['D','Inspección técnica','No consultada',`<div class="check-row"><span>Certificado CITV</span><b class="unknown">No consultado</b></div><div class="check-row"><span>Resultado y vigencia</span><b class="unknown">No disponibles</b></div>${btn('mtc')}`],
- ['E','Papeletas e impuesto','No consultados',`<div class="check-row"><span>Papeletas de Lima</span><b class="unknown">No consultadas</b></div><div class="check-row"><span>Impuesto vehicular</span><b class="unknown">No consultado</b></div><p class="data-note">Para otras ciudades consulta la entidad de la jurisdicción correspondiente.</p>${btn('sat')}`],
- ['F','Récord SUTRAN','No consultado',`<div class="check-row"><span>Infracciones SUTRAN</span><b class="unknown">No consultadas</b></div><p class="data-note">No reemplaza papeletas municipales ni consultas ATU.</p>${btn('sutran')}`],
- ['G','Accidentes y antecedentes','No determinados','<div class="check-row"><span>Accidentes registrados</span><b class="unknown">No determinados</b></div><div class="check-row"><span>Inspección física</span><b class="unknown">Pendiente</b></div><p class="data-note">No hallar registros nunca garantiza que no hubo accidentes.</p>'],
- ['H','Lectura final','Verificación pendiente',`<p>Este prototipo organiza las verificaciones, pero no extrae datos de portales protegidos.</p><div class="check-row"><span>Fuentes verificadas automáticamente</span><b class="unknown">0</b></div><div class="check-row"><span>Datos inventados para la placa</span><b class="demo">Ninguno</b></div>`]
-]}
-function render(p){currentPlate=p;let d=p==='ABC-123';$('#plate').textContent=p;$('#plateNote').textContent=d?'PLACA DEMOSTRATIVA':'PLACA INGRESADA';$('#entityBadge').textContent=d?'MODO DEMOSTRACIÓN':'CONSULTA PENDIENTE';$('#reportTitle').textContent=d?'Toyota Hilux 4×4 · Ejemplo ficticio':`Reporte para ${p}`;$('#vehicleMeta').textContent=d?'Camioneta · Año 2019 · Diésel · Blanco':'Características pendientes de consulta en SUNARP';$('#reportStatus').textContent=d?'Demostrativo':'Sin verificar';$('#reportMode').textContent=d?'Vista demostrativa · Datos ficticios':'Reporte base · Fuentes pendientes';$('#generatedAt').textContent=`Generado: ${new Intl.DateTimeFormat('es-PE',{dateStyle:'medium',timeStyle:'short'}).format(new Date())}`;$('#statusGrid').innerHTML=items(d).map(o=>`<button class="status-card ${o.c}" data-section="${o.x}"><span>${o.l}</span><b>${o.v}</b><small>${o.s}</small></button>`).join('');$('#accordion').innerHTML=sections(d).map((s,i)=>`<section class="acc-item ${i===0?'open':''}" id="section-${i}"><button class="acc-trigger"><span class="acc-letter">${s[0]}</span><h4>${s[1]}</h4><span class="acc-value">${s[2]}</span><span class="plus">+</span></button><div class="acc-panel">${s[3]}</div></section>`).join('')}
-$('#plateForm').addEventListener('submit',e=>{e.preventDefault();let p=normalize($('#plateInput').value);if(!p)return toast('Ingresa una placa válida');$('#plateInput').value=p;render(p);$('#reporte').scrollIntoView({behavior:'smooth'})});
-document.addEventListener('click',async e=>{let t=e.target.closest('.acc-trigger'),c=e.target.closest('[data-section]'),b=e.target.closest('[data-source]');if(t)t.closest('.acc-item').classList.toggle('open');if(c){let i=$(`#section-${c.dataset.section}`);i.classList.add('open');i.scrollIntoView({behavior:'smooth',block:'center'})}if(b){let s=sources[b.dataset.source];try{await navigator.clipboard.writeText(currentPlate);toast(`${currentPlate} copiada`)}catch{}window.open(s.url,'_blank','noopener')}});
-$('#expandAll').onclick=()=>{allOpen=!allOpen;document.querySelectorAll('.acc-item').forEach(x=>x.classList.toggle('open',allOpen));$('#expandAll').textContent=allOpen?'Contraer todas':'Expandir todas las secciones'};$('#newSearch').onclick=()=>{$('#consulta').scrollIntoView({behavior:'smooth'});$('#plateInput').focus()};$('#downloadPdf').onclick=()=>{const oldTitle=document.title;document.title=`Reporte-vehicular-${currentPlate}`;document.body.classList.add('printing-report');toast('En la ventana siguiente elige Guardar como PDF');setTimeout(()=>window.print(),250);window.addEventListener('afterprint',()=>{document.title=oldTitle;document.body.classList.remove('printing-report')},{once:true})};function toast(t){let e=$('#toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2600)}render(currentPlate);
+const $ = selector => document.querySelector(selector);
+let currentPlate = '';
+
+function normalizePlate(value) {
+  const clean = value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+  if (clean.length < 5 || clean.length > 7) return null;
+  return clean.length === 6 ? `${clean.slice(0, 3)}-${clean.slice(3)}` : clean;
+}
+
+function showToast(message) {
+  const toast = $('#toast');
+  toast.textContent = message;
+  toast.classList.add('show');
+  clearTimeout(showToast.timer);
+  showToast.timer = setTimeout(() => toast.classList.remove('show'), 2400);
+}
+
+function preparePlate(plate) {
+  currentPlate = plate;
+  $('#plateInput').value = plate;
+  $('#preparedPlate strong').textContent = plate;
+  document.querySelectorAll('[data-copy="true"]').forEach(link => {
+    link.classList.add('ready');
+    link.firstChild.textContent = `Copiar ${plate} y abrir `;
+  });
+  showToast(`${plate} preparada para las consultas`);
+}
+
+$('#plateForm').addEventListener('submit', event => {
+  event.preventDefault();
+  const plate = normalizePlate($('#plateInput').value);
+  if (!plate) return showToast('Ingresa una placa válida');
+  preparePlate(plate);
+  $('#consultas').scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+document.addEventListener('click', async event => {
+  const link = event.target.closest('[data-copy="true"]');
+  if (!link || !currentPlate) return;
+  try {
+    await navigator.clipboard.writeText(currentPlate.replace('-', ''));
+    showToast(`${currentPlate} copiada. Pégala en el portal oficial.`);
+  } catch {
+    showToast(`Placa preparada: ${currentPlate}`);
+  }
+});

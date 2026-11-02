@@ -1,9 +1,82 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f3f1eb"><title>Plaqueo Vehicular — Consulta por placa</title><meta name="description" content="Consulta por placa y organiza la verificación vehicular en fuentes oficiales del Perú."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css?v=3"></head>
-<body><header class="site-header"><a class="brand" href="#inicio"><span class="brand-wheel">↔</span><span>Plaqueo<br><b>Vehicular</b></span></a><nav><a href="#consulta">Consultar</a><a href="#reporte">Reporte</a></nav><a class="header-cta" href="#consulta">Consultar placa</a></header>
-<main id="inicio" class="page-shell"><section class="intro search-intro" id="consulta"><span class="eyebrow">CONSULTA VEHICULAR EN PERÚ</span><h1>Una placa.<br>Todo lo que debes verificar.</h1><p>Organiza la consulta de ficha técnica, titularidad, SOAT, revisión técnica, infracciones y cargas desde fuentes oficiales.</p><form class="plate-search" id="plateForm"><label for="plateInput">Ingresa la placa</label><div class="plate-input-wrap"><input id="plateInput" value="ABC-123" maxlength="8" autocomplete="off"><button type="submit">Generar reporte →</button></div><small>Prueba con ABC-123 para ver un ejemplo ficticio completo.</small></form></section>
-<div class="demo-alert"><span>i</span><p><b>Prototipo transparente.</b> GitHub Pages no puede leer automáticamente portales con captcha o autenticación. El reporte copia la placa y abre cada consulta oficial; nunca convierte “no consultado” en “sin deuda”.</p></div>
-<section class="report" id="reporte"><header class="report-top"><div class="report-brand"><span class="brand-wheel">↔</span><div><b>PLAQUEO VEHICULAR</b><small>REPORTE NACIONAL POR PLACA</small></div></div><div><b>Informe vehicular</b><small id="reportMode">Vista demostrativa · Datos ficticios</small><small id="generatedAt"></small></div></header><div class="vehicle-hero"><div class="demo-plate"><span>PERÚ · CONSULTA</span><strong id="plate">ABC-123</strong><small id="plateNote">PLACA DEMOSTRATIVA</small></div><div class="vehicle-title"><span id="entityBadge" class="entity-badge">MODO DEMOSTRACIÓN</span><h2 id="reportTitle">Toyota Hilux 4×4 · Ejemplo ficticio</h2><p id="vehicleMeta">Camioneta · Año 2019 · Diésel · Blanco</p></div><div class="base-price"><span>Estado del reporte</span><strong id="reportStatus">Demostrativo</strong><small>Fuentes no consultadas automáticamente</small></div></div>
-<section class="summary-box"><div class="summary-heading"><div><h3>Resumen del vehículo</h3><p>Toca un resultado para abrir su detalle y consultar la fuente oficial.</p></div><span class="source-status">0 fuentes verificadas automáticamente</span></div><div class="status-grid" id="statusGrid"></div></section><div class="detail-heading"><div><span class="eyebrow">DETALLE DEL INFORME</span><h3>Resultados y consultas oficiales</h3></div><button id="expandAll">Expandir todas las secciones</button></div><div class="accordion" id="accordion"></div><div class="print-sources"><h3>Fuentes oficiales del reporte</h3><ul><li>SUNARP: https://www.gob.pe/358-consultar-los-datos-de-un-vehiculo-consulta-vehicular</li><li>MTC · CITV: https://sistemas.mtc.gob.pe/aplicaciones/consulta-de-inspeccion-tecnica-vehicular/</li><li>APESEG · SOAT: https://www.apeseg.org.pe/</li><li>SUTRAN: https://www.sutran.gob.pe/consultas/record-de-infracciones/record-de-infracciones/</li><li>SAT Lima: https://www.sat.gob.pe/</li></ul></div><div class="report-warning"><b>Importante:</b> la ausencia de resultados en una fuente no garantiza la inexistencia de deudas, accidentes o cargas.</div><div class="report-actions"><button class="download-action" id="downloadPdf">Descargar PDF</button><button class="primary-action" id="newSearch">Consultar otra placa</button><a href="#fuentes">Ver todas las fuentes</a></div></section>
-<section class="how-it-works"><span class="eyebrow">CÓMO FUNCIONA</span><h2>Consulta sin inventar resultados</h2><div class="steps"><article><b>1</b><h3>Escribe la placa</h3><p>La normalizamos y la dejamos lista para copiar.</p></article><article><b>2</b><h3>Abre cada fuente</h3><p>Accede a SUNARP, MTC, APESEG, SUTRAN y SAT.</p></article><article><b>3</b><h3>Contrasta los datos</h3><p>Completa el reporte solo con respuestas verificadas.</p></article></div></section>
-<section class="sources" id="fuentes"><div><span class="eyebrow">CONSULTAS REALES</span><h2>Fuentes oficiales</h2><p>Algunas consultas requieren captcha, DNI, pago o intervención directa del usuario.</p></div><div class="source-list"><a href="https://www.gob.pe/358-consultar-los-datos-de-un-vehiculo-consulta-vehicular" target="_blank"><span>SR</span><div><b>SUNARP · Consulta Vehicular</b><small>Ficha, titular, VIN, motor y estado · Requiere captcha</small></div><i>↗</i></a><a href="https://sistemas.mtc.gob.pe/aplicaciones/consulta-de-inspeccion-tecnica-vehicular/" target="_blank"><span>MT</span><div><b>MTC · Inspección técnica</b><small>Consulta de revisión técnica vehicular</small></div><i>↗</i></a><a href="https://www.apeseg.org.pe/" target="_blank"><span>SO</span><div><b>APESEG · Consulta SOAT</b><small>Certificado SOAT activo por placa</small></div><i>↗</i></a><a href="https://www.sutran.gob.pe/consultas/record-de-infracciones/record-de-infracciones/" target="_blank"><span>ST</span><div><b>SUTRAN · Récord de infracciones</b><small>Infracciones de competencia SUTRAN</small></div><i>↗</i></a><a href="https://www.sat.gob.pe/" target="_blank"><span>SL</span><div><b>SAT Lima</b><small>Papeletas e impuesto vehicular en Lima</small></div><i>↗</i></a></div></section></main>
-<footer><div class="brand"><span class="brand-wheel">↔</span><span>Plaqueo<br><b>Vehicular</b></span></div><p>Prototipo informativo. No somos una entidad pública ni reemplazamos una certificación oficial.</p><span>© 2026 · Información para decidir con cuidado.</span></footer><div class="toast" id="toast"></div><script src="app.js?v=3"></script></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#123f32">
+  <title>Plaqueo Vehicular — Consultas oficiales por placa</title>
+  <meta name="description" content="Guía de enlaces oficiales para consultar un vehículo por placa en Perú, sin inventar resultados.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=5">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Plaqueo Vehicular, inicio"><span class="brand-mark">PV</span><span>Plaqueo <b>Vehicular</b></span></a>
+    <a class="header-link" href="#consultas">Ver consultas oficiales</a>
+  </header>
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">GUÍA VEHICULAR DEL PERÚ</span>
+        <h1>Una placa.<br><em>Las fuentes correctas.</em></h1>
+        <p>Prepara tu placa una vez y abre cada consulta oficial. La página te avisa qué información obtendrás y si el portal exige captcha, pago o una jurisdicción específica.</p>
+      </div>
+      <form class="plate-form" id="plateForm">
+        <label for="plateInput">Placa del vehículo</label>
+        <div class="plate-row"><input id="plateInput" placeholder="ABC-123" maxlength="8" autocomplete="off" aria-describedby="plateHelp"><button type="submit">Preparar consultas</button></div>
+        <small id="plateHelp">Tu placa no se guarda ni se envía desde esta página.</small>
+      </form>
+      <div class="truth-note"><b>Importante:</b> esta web no consulta bases en segundo plano. Cada resultado debe revisarse directamente en el portal oficial.</div>
+    </section>
+    <section class="directory" id="consultas">
+      <div class="section-heading"><div><span class="eyebrow">ENLACES VERIFICADOS</span><h2>Consultas oficiales</h2></div><div class="prepared-plate" id="preparedPlate"><span>Placa preparada</span><strong>Sin ingresar</strong></div></div>
+      <div class="cards">
+        <article class="source-card featured">
+          <div class="card-top"><span class="source-icon">SR</span><div class="badges"><span>Gratis</span><span class="warn">Captcha</span></div></div>
+          <h3>SUNARP · Consulta Vehicular</h3><p>Marca, modelo, VIN, motor, color, titular, estado y posible anotación de robo.</p><ul><li>Alcance nacional</li><li>No muestra gravámenes</li></ul>
+          <a class="source-link" data-copy="true" href="https://consultavehicular.sunarp.gob.pe/consulta-vehicular/" target="_blank" rel="noopener">Abrir SUNARP <span>↗</span></a>
+        </article>
+        <article class="source-card">
+          <div class="card-top"><span class="source-icon blue">SB</span><div class="badges"><span>Gratis</span><span class="warn">reCAPTCHA</span></div></div>
+          <h3>SBS · SOAT y siniestros</h3><p>SOAT, CAT, seguro vehicular y accidentes registrados durante los últimos cinco años.</p><ul><li>Alcance nacional</li><li>Consulta por placa</li></ul>
+          <a class="source-link" data-copy="true" href="https://servicios.sbs.gob.pe/reportesoat/BusquedaPlaca" target="_blank" rel="noopener">Abrir SBS <span>↗</span></a>
+        </article>
+        <article class="source-card">
+          <div class="card-top"><span class="source-icon orange">MT</span><div class="badges"><span>Gratis</span><span class="warn">Captcha</span></div></div>
+          <h3>MTC · Revisión técnica</h3><p>Vigencia del certificado y registro de las últimas inspecciones técnicas vehiculares.</p><ul><li>Alcance nacional</li><li>Consulta por placa</li></ul>
+          <a class="source-link" data-copy="true" href="https://portal.mtc.gob.pe/reportedgtt/form/frmconsultaplacaitv.aspx" target="_blank" rel="noopener">Abrir MTC <span>↗</span></a>
+        </article>
+        <article class="source-card">
+          <div class="card-top"><span class="source-icon gold">ST</span><div class="badges"><span>Gratis</span><span class="warn">Formulario</span></div></div>
+          <h3>SUTRAN · Infracciones</h3><p>Récord de infracciones administradas por SUTRAN. Las anteriores a 2020 se solicitan por Mesa de Partes.</p><ul><li>No incluye papeletas municipales</li></ul>
+          <a class="source-link" data-copy="true" href="https://www.sutran.gob.pe/consultas/record-de-infracciones/record-de-infracciones/" target="_blank" rel="noopener">Abrir SUTRAN <span>↗</span></a>
+        </article>
+        <article class="source-card">
+          <div class="card-top"><span class="source-icon red">SL</span><div class="badges"><span class="local">Solo Lima</span></div></div>
+          <h3>SAT Lima · Papeletas</h3><p>Papeletas pendientes administradas en la provincia de Lima. Otras ciudades usan su municipalidad o SAT local.</p><ul><li>Búsqueda por placa</li></ul>
+          <a class="source-link" data-copy="true" href="https://www.sat.gob.pe/Websitev8/modulos/contenidos/ConsultaPapeletasv3.aspx" target="_blank" rel="noopener">Abrir SAT Lima <span>↗</span></a>
+        </article>
+        <article class="source-card paid">
+          <div class="card-top"><span class="source-icon dark">BI</span><div class="badges"><span class="paid-badge">Pago</span><span>Cuenta SPRL</span></div></div>
+          <h3>SUNARP · Boleta informativa</h3><p>Documento con gravámenes, garantías mobiliarias, embargos y títulos pendientes.</p><ul><li>Servicio pagado</li><li>Descarga oficial</li></ul>
+          <a class="source-link" data-copy="true" href="https://www.gob.pe/22911-solicitar-boleta-informativa" target="_blank" rel="noopener">Ver cómo solicitarla <span>↗</span></a>
+        </article>
+        <article class="source-card compact">
+          <div class="card-top"><span class="source-icon violet">IV</span><div class="badges"><span class="local">Solo Lima</span></div></div>
+          <h3>SAT Lima · Impuesto vehicular</h3><p>Calculadora referencial por año, marca y modelo. No realiza la búsqueda solamente con la placa.</p>
+          <a class="source-link" href="https://www.sat.gob.pe/websitev8/modulos/contenidos/calculadorav2.aspx" target="_blank" rel="noopener">Abrir calculadora <span>↗</span></a>
+        </article>
+      </div>
+    </section>
+    <section class="limits">
+      <div><span class="eyebrow">LÍMITES REALES</span><h2>Lo que no existe en una sola consulta pública</h2></div>
+      <div class="limit-list"><p><b>Papeletas de todo el Perú</b><span>Cada municipalidad o SAT administra su propia información.</span></p><p><b>Estado mecánico real</b><span>Necesita inspección física de un especialista.</span></p><p><b>Todos los accidentes</b><span>La SBS muestra los reportados al seguro, no hechos nunca declarados.</span></p><p><b>Bases policiales restringidas</b><span>No son de acceso público y no se deben simular.</span></p></div>
+    </section>
+  </main>
+  <footer><div class="brand"><span class="brand-mark">PV</span><span>Plaqueo <b>Vehicular</b></span></div><p>Guía informativa independiente. Verifica siempre el resultado en la entidad oficial.</p><span>© 2026</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js?v=5"></script>
+</body>
+</html>
