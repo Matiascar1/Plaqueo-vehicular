@@ -3,98 +3,76 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#f4f1e8">
-  <title>Plaqueo Vehicular — Remates de vehículos del Perú</title>
-  <meta name="description" content="Explora remates oficiales de vehículos del Perú con fuentes, fechas y análisis transparente.">
+  <meta name="theme-color" content="#f3f1eb">
+  <title>Plaqueo Vehicular — Reporte de remate</title>
+  <meta name="description" content="Reporte demostrativo de remates vehiculares oficiales del Perú con fuentes y análisis transparente.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#inicio" aria-label="Plaqueo Vehicular, inicio">
-      <span class="brand-mark" aria-hidden="true"><span></span></span>
-      <span>Plaqueo<br><b>Vehicular</b></span>
-    </a>
-    <nav aria-label="Navegación principal">
-      <a href="#remates">Remates</a><a href="#fuentes">Fuentes</a><a href="#metodo">Cómo funciona</a>
-    </nav>
-    <button class="saved-btn" id="savedBtn" type="button" aria-label="Ver remates guardados">Guardados <span id="savedCount">0</span></button>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Plaqueo Vehicular, inicio"><span class="brand-wheel" aria-hidden="true">↔</span><span>Plaqueo<br><b>Vehicular</b></span></a>
+    <nav aria-label="Navegación principal"><a href="#reporte">Reporte</a><a href="#oportunidades">Remates</a><a href="#fuentes">Fuentes</a></nav>
+    <a class="header-cta" href="#oportunidades">Buscar remate</a>
   </header>
 
-  <main id="inicio">
-    <section class="hero">
-      <div class="eyebrow"><i></i> Radar nacional de oportunidades</div>
-      <h1>Remates oficiales.<br><em>Decisiones con sustento.</em></h1>
-      <p class="hero-copy">Reunimos convocatorias públicas de vehículos y ordenamos lo importante: precio, fecha, ubicación, fuente y costos que pueden cambiar el negocio.</p>
-
-      <form class="searchbar" id="searchForm">
-        <label class="search-input"><span aria-hidden="true">⌕</span><input id="query" type="search" placeholder="Busca por marca, modelo, placa o entidad" autocomplete="off"></label>
-        <button type="submit">Buscar remates <span>→</span></button>
-      </form>
-      <div class="quick-filters" aria-label="Filtros rápidos">
-        <button class="chip active" data-filter="all" type="button">Todos</button>
-        <button class="chip" data-filter="Lima" type="button">Lima</button>
-        <button class="chip" data-filter="Norte" type="button">Norte</button>
-        <button class="chip" data-filter="Sur" type="button">Sur</button>
-        <button class="chip" data-filter="SUNAT" type="button">SUNAT</button>
-        <button class="chip" data-filter="SAT Lima" type="button">SAT Lima</button>
-      </div>
-
-      <div class="trust-strip">
-        <div><strong>2</strong><span>fuentes oficiales revisadas hoy</span></div>
-        <div><strong>0</strong><span>remates vehiculares activos confirmados</span></div>
-        <div><strong>100%</strong><span>trazabilidad visible</span></div>
-      </div>
+  <main id="inicio" class="page-shell">
+    <section class="intro">
+      <span class="eyebrow">PROTOTIPO INTERACTIVO</span>
+      <h1>Reporte de remate vehicular</h1>
+      <p>Revisa en un solo lugar la convocatoria, el precio, los riesgos y los datos que aún debes verificar antes de ofertar.</p>
     </section>
 
-    <section class="status-banner" aria-label="Estado actual de fuentes">
-      <div class="status-icon">!</div>
-      <div><b>Estado oficial al 2 nov 2026</b><p>SUNAT no muestra vehículos en su categoría y SAT Lima informa que no hay remates en proceso. Los casos que siguen son demostrativos y sirven para probar la experiencia.</p></div>
-      <a href="#fuentes">Ver fuentes →</a>
+    <div class="demo-alert" role="note"><span>i</span><p><b>Demostración ficticia.</b> Los vehículos, placas, fechas y montos del informe son ilustrativos. Las fuentes enlazadas sí son oficiales y su disponibilidad fue verificada.</p></div>
+
+    <section class="report" id="reporte" aria-labelledby="reportTitle">
+      <header class="report-top">
+        <div class="report-brand"><span class="brand-wheel">↔</span><div><b>PLAQUEO VEHICULAR</b><small>RADAR DE REMATES PÚBLICOS</small></div></div>
+        <div><b>Informe de oportunidad</b><small>Ejemplo interactivo · Datos demostrativos</small></div>
+      </header>
+
+      <div class="case-picker" role="tablist" aria-label="Elegir caso demostrativo">
+        <button class="case-tab active" role="tab" data-id="1">Toyota Hilux</button>
+        <button class="case-tab" role="tab" data-id="2">Kia Rio</button>
+        <button class="case-tab" role="tab" data-id="3">Hino 500</button>
+      </div>
+
+      <div class="vehicle-hero">
+        <div class="demo-plate"><span>PERÚ · DEMO</span><strong id="plate">DEMO-01</strong><small>NO ES PLACA REAL</small></div>
+        <div class="vehicle-title"><span id="entityBadge" class="entity-badge">SUNAT · CASO SIMULADO</span><h2 id="reportTitle">Toyota Hilux 4×4</h2><p id="vehicleMeta">Camioneta · Año 2019 · Diésel · Blanco</p></div>
+        <div class="base-price"><span>Precio base ilustrativo</span><strong id="basePrice">S/ 48,500</strong><small id="auctionDate">18 nov 2026 · Arequipa</small></div>
+      </div>
+
+      <section class="summary-box" aria-labelledby="summaryTitle">
+        <div class="summary-heading"><div><h3 id="summaryTitle">Resumen de la oportunidad</h3><p>Toca un resultado para abrir su detalle y revisar qué está confirmado.</p></div><span class="source-status">0 antecedentes reales atribuidos</span></div>
+        <div class="status-grid" id="statusGrid"></div>
+      </section>
+
+      <div class="detail-heading"><div><span class="eyebrow">DETALLE DEL INFORME</span><h3>Datos, supuestos y verificaciones</h3></div><button id="expandAll" type="button">Expandir todas las secciones</button></div>
+      <div class="accordion" id="accordion"></div>
+
+      <div class="report-warning"><b>Una alerta importante:</b> “No disponible” no significa “sin deuda”. Este informe no sustituye las bases del remate, la publicidad registral, la inspección mecánica ni la revisión legal.</div>
+      <div class="report-actions"><a class="primary-action" id="officialLink" href="https://rematestributarios.sunat.gob.pe/vehiculos" target="_blank" rel="noopener">Abrir fuente oficial ↗</a><a href="#oportunidades">Comparar casos</a></div>
     </section>
 
-    <section class="results" id="remates">
-      <div class="section-heading">
-        <div><span class="kicker">PROTOTIPO INTERACTIVO</span><h2>Así se verían las oportunidades</h2></div>
-        <div class="view-actions"><span id="resultCount">3 casos demostrativos</span><button id="sortBtn" type="button">Ordenar: menor precio</button></div>
-      </div>
-      <div class="results-layout">
-        <aside class="filters" aria-label="Filtros avanzados">
-          <div class="filter-title">Filtrar resultados <button id="clearFilters" type="button">Limpiar</button></div>
-          <label>Entidad<select id="entityFilter"><option value="all">Todas</option><option>SUNAT</option><option>SAT Lima</option><option>PRONABI</option></select></label>
-          <label>Tipo de vehículo<select id="typeFilter"><option value="all">Todos</option><option>Camioneta</option><option>Automóvil</option><option>Camión</option></select></label>
-          <label>Precio base máximo <output id="priceOutput">S/ 120,000</output><input id="priceFilter" type="range" min="10000" max="120000" step="5000" value="120000"></label>
-          <label class="check"><input id="profitableFilter" type="checkbox"><span>Solo margen favorable</span></label>
-          <p class="filter-note">Los filtros funcionan con los datos demostrativos cargados en este prototipo.</p>
-        </aside>
-        <div class="cards" id="cards"></div>
-      </div>
-    </section>
-
-    <section class="method" id="metodo">
-      <div class="section-heading"><div><span class="kicker">UNA LECTURA PRUDENTE</span><h2>Del aviso oficial a una decisión</h2></div></div>
-      <div class="method-grid">
-        <article><span>01</span><h3>Encontramos</h3><p>Revisamos portales y publicaciones oficiales. Cada oportunidad conserva el enlace a su origen.</p></article>
-        <article><span>02</span><h3>Ordenamos</h3><p>Normalizamos precio, convocatoria, ubicación y características sin completar vacíos con suposiciones.</p></article>
-        <article><span>03</span><h3>Estimamos</h3><p>El margen usa supuestos editables. No reemplaza inspección mecánica, registral ni legal.</p></article>
-      </div>
+    <section class="opportunities" id="oportunidades">
+      <div class="section-title"><span class="eyebrow">OTROS CASOS DEL PROTOTIPO</span><h2>Compara antes de decidir</h2><p>Todos los casos de esta versión son demostrativos.</p></div>
+      <div class="opportunity-grid" id="opportunityGrid"></div>
     </section>
 
     <section class="sources" id="fuentes">
-      <div><span class="kicker">FUENTES CON FECHA Y ESTADO</span><h2>Transparencia primero</h2><p>Un dato ausente no se convierte en “sin deuda”. Mostramos la disponibilidad y la última revisión de cada fuente.</p></div>
+      <div><span class="eyebrow">TRAZABILIDAD</span><h2>Fuentes oficiales</h2><p>Mostramos el enlace y el estado de cada portal. No completamos vacíos con suposiciones.</p></div>
       <div class="source-list">
-        <a href="https://rematestributarios.sunat.gob.pe/vehiculos" target="_blank" rel="noopener"><span class="source-logo sunat">S</span><span><b>SUNAT · Remates tributarios</b><small>Revisada 2 nov 2026 · Sin vehículos publicados</small></span><i>Fuente oficial ↗</i></a>
-        <a href="https://www.sat.gob.pe/websiteV8/modulos/remates/vehiculos.aspx" target="_blank" rel="noopener"><span class="source-logo sat">SAT</span><span><b>SAT Lima · Remate de vehículos</b><small>Revisada 2 nov 2026 · Ningún remate en proceso</small></span><i>Fuente oficial ↗</i></a>
-        <a href="https://www.gob.pe/pronabi" target="_blank" rel="noopener"><span class="source-logo pro">P</span><span><b>PRONABI · Bienes incautados</b><small>Fuente complementaria · Revisión manual requerida</small></span><i>Fuente oficial ↗</i></a>
+        <a href="https://rematestributarios.sunat.gob.pe/vehiculos" target="_blank" rel="noopener"><span>S</span><div><b>SUNAT · Remates tributarios</b><small>Revisada 2 nov 2026 · Sin vehículos publicados</small></div><i>↗</i></a>
+        <a href="https://www.sat.gob.pe/websiteV8/modulos/remates/vehiculos.aspx" target="_blank" rel="noopener"><span>SL</span><div><b>SAT Lima · Remate de vehículos</b><small>Revisada 2 nov 2026 · Ningún remate en proceso</small></div><i>↗</i></a>
+        <a href="https://www.gob.pe/pronabi" target="_blank" rel="noopener"><span>P</span><div><b>PRONABI · Bienes incautados</b><small>Fuente complementaria · Revisión manual requerida</small></div><i>↗</i></a>
       </div>
     </section>
   </main>
 
-  <footer><div class="brand footer-brand"><span class="brand-mark"><span></span></span><span>Plaqueo<br><b>Vehicular</b></span></div><p>Prototipo informativo. No somos una entidad pública ni intermediamos en remates.</p><span>Hecho para decidir con los ojos abiertos.</span></footer>
-
-  <dialog id="detailDialog" aria-labelledby="detailTitle"><div id="detailContent"></div></dialog>
+  <footer><div class="brand"><span class="brand-wheel">↔</span><span>Plaqueo<br><b>Vehicular</b></span></div><p>Prototipo informativo. No somos una entidad pública ni intermediamos en remates.</p><span>© 2026 · Información para decidir con cuidado.</span></footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="app.js"></script>
 </body>
