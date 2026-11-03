@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://matiascar1.github.io/Plaqueo-vehicular/sitemap.xml
