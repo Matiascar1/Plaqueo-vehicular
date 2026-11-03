@@ -4,79 +4,138 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#123f32">
-  <title>Plaqueo Vehicular — Consultas oficiales por placa</title>
-  <meta name="description" content="Guía de enlaces oficiales para consultar un vehículo por placa en Perú, sin inventar resultados.">
+  <title>Checklist para comprar un auto usado en Perú | Plaqueo Vehicular</title>
+  <meta name="description" content="Guía paso a paso para revisar un auto usado en Perú con fuentes oficiales. Consulta SUNARP, SOAT, revisión técnica, papeletas y gravámenes sin datos inventados.">
+  <link rel="canonical" href="https://matiascar1.github.io/Plaqueo-vehicular/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:site_name" content="Plaqueo Vehicular">
+  <meta property="og:title" content="Antes de comprar un auto usado, revisa estos 6 puntos">
+  <meta property="og:description" content="Checklist gratuito con enlaces oficiales de SUNARP, SBS, MTC, SUTRAN y SAT. Sin inventar resultados.">
+  <meta property="og:url" content="https://matiascar1.github.io/Plaqueo-vehicular/">
+  <meta property="og:image" content="https://matiascar1.github.io/Plaqueo-vehicular/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=8">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Plaqueo Vehicular","url":"https://matiascar1.github.io/Plaqueo-vehicular/","description":"Guía independiente para revisar un auto usado en Perú mediante fuentes oficiales."}</script>
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="#inicio" aria-label="Plaqueo Vehicular, inicio"><span class="brand-mark">PV</span><span>Plaqueo <b>Vehicular</b></span></a>
-    <a class="header-link" href="#consultas">Ver consultas oficiales</a>
+    <nav aria-label="Navegación principal"><a href="#checklist">Checklist</a><a href="#guias">Guías</a><a href="#limites">Transparencia</a></nav>
+    <a class="header-link" href="#checklist">Empezar revisión</a>
   </header>
+
   <main id="inicio">
     <section class="hero">
       <div class="hero-copy">
-        <span class="eyebrow">GUÍA VEHICULAR DEL PERÚ</span>
-        <h1>Una placa.<br><em>Las fuentes correctas.</em></h1>
-        <p>Prepara tu placa una vez y abre cada consulta oficial. La página te avisa qué información obtendrás y si el portal exige captcha, pago o una jurisdicción específica.</p>
+        <span class="eyebrow">COMPRA CON MENOS RIESGO</span>
+        <h1>No compres un auto usado<br><em>sin revisar estos 6 puntos.</em></h1>
+        <p>Te acompañamos paso a paso por las consultas oficiales del Perú. Tú revisas los resultados; nosotros te ayudamos a no olvidar nada y a registrar tus observaciones.</p>
       </div>
       <form class="plate-form" id="plateForm">
-        <label for="plateInput">Placa del vehículo</label>
-        <div class="plate-row"><input id="plateInput" placeholder="ABC-123" maxlength="8" autocomplete="off" aria-describedby="plateHelp"><button type="submit">Preparar consultas</button></div>
-        <small id="plateHelp">Tu placa no se guarda ni se envía desde esta página.</small>
+        <label for="plateInput">Placa que vas a revisar</label>
+        <div class="plate-row"><input id="plateInput" placeholder="ABC-123" maxlength="8" autocomplete="off" aria-describedby="plateHelp"><button type="submit">Crear mi checklist</button></div>
+        <small id="plateHelp">La placa y tus notas permanecen en esta pestaña. No las enviamos ni guardamos en un servidor.</small>
       </form>
-      <div class="truth-note"><b>Importante:</b> esta web no consulta bases en segundo plano. Cada resultado debe revisarse directamente en el portal oficial.</div>
-    </section>
-    <section class="directory" id="consultas">
-      <div class="section-heading"><div><span class="eyebrow">ENLACES VERIFICADOS</span><h2>Consultas oficiales</h2></div><div class="prepared-plate" id="preparedPlate"><span>Placa preparada</span><strong>Sin ingresar</strong></div></div>
-      <div class="cards">
-        <article class="source-card featured">
-          <div class="card-top"><span class="source-icon">SR</span><div class="badges"><span>Gratis</span><span class="warn">Captcha</span></div></div>
-          <h3>SUNARP · Consulta Vehicular</h3><p>Marca, modelo, VIN, motor, color, titular, estado y posible anotación de robo.</p><ul><li>Alcance nacional</li><li>No muestra gravámenes</li></ul>
-          <a class="source-link" data-copy="true" href="https://consultavehicular.sunarp.gob.pe/consulta-vehicular/" target="_blank" rel="noopener">Abrir SUNARP <span>↗</span></a>
-        </article>
-        <article class="source-card">
-          <div class="card-top"><span class="source-icon blue">SB</span><div class="badges"><span>Gratis</span><span class="warn">reCAPTCHA</span></div></div>
-          <h3>SBS · SOAT y siniestros</h3><p>SOAT, CAT, seguro vehicular y accidentes registrados durante los últimos cinco años.</p><ul><li>Alcance nacional</li><li>Consulta por placa</li></ul>
-          <a class="source-link" data-copy="true" href="https://servicios.sbs.gob.pe/reportesoat/BusquedaPlaca" target="_blank" rel="noopener">Abrir SBS <span>↗</span></a>
-        </article>
-        <article class="source-card">
-          <div class="card-top"><span class="source-icon orange">MT</span><div class="badges"><span>Gratis</span><span class="warn">Captcha</span></div></div>
-          <h3>MTC · Revisión técnica</h3><p>Vigencia del certificado y registro de las últimas inspecciones técnicas vehiculares.</p><ul><li>Alcance nacional</li><li>Consulta por placa</li></ul>
-          <a class="source-link" data-copy="true" href="https://portal.mtc.gob.pe/reportedgtt/form/frmconsultaplacaitv.aspx" target="_blank" rel="noopener">Abrir MTC <span>↗</span></a>
-        </article>
-        <article class="source-card">
-          <div class="card-top"><span class="source-icon gold">ST</span><div class="badges"><span>Gratis</span><span class="warn">Formulario</span></div></div>
-          <h3>SUTRAN · Infracciones</h3><p>Récord de infracciones administradas por SUTRAN. Las anteriores a 2020 se solicitan por Mesa de Partes.</p><ul><li>No incluye papeletas municipales</li></ul>
-          <a class="source-link" data-copy="true" href="https://www.sutran.gob.pe/consultas/record-de-infracciones/record-de-infracciones/" target="_blank" rel="noopener">Abrir SUTRAN <span>↗</span></a>
-        </article>
-        <article class="source-card">
-          <div class="card-top"><span class="source-icon red">SL</span><div class="badges"><span class="local">Solo Lima</span></div></div>
-          <h3>SAT Lima · Papeletas</h3><p>Papeletas pendientes administradas en la provincia de Lima. Otras ciudades usan su municipalidad o SAT local.</p><ul><li>Búsqueda por placa</li></ul>
-          <a class="source-link" data-copy="true" href="https://www.sat.gob.pe/Websitev8/modulos/contenidos/ConsultaPapeletasv3.aspx" target="_blank" rel="noopener">Abrir SAT Lima <span>↗</span></a>
-        </article>
-        <article class="source-card paid">
-          <div class="card-top"><span class="source-icon dark">BI</span><div class="badges"><span class="paid-badge">Pago</span><span>Cuenta SPRL</span></div></div>
-          <h3>SUNARP · Boleta informativa</h3><p>Documento con gravámenes, garantías mobiliarias, embargos y títulos pendientes.</p><ul><li>Servicio pagado</li><li>Descarga oficial</li></ul>
-          <a class="source-link" data-copy="true" href="https://www.gob.pe/22911-solicitar-boleta-informativa" target="_blank" rel="noopener">Ver cómo solicitarla <span>↗</span></a>
-        </article>
-        <article class="source-card compact">
-          <div class="card-top"><span class="source-icon violet">IV</span><div class="badges"><span class="local">Solo Lima</span></div></div>
-          <h3>SAT Lima · Impuesto vehicular</h3><p>Calculadora referencial por año, marca y modelo. No realiza la búsqueda solamente con la placa.</p>
-          <a class="source-link" href="https://www.sat.gob.pe/websitev8/modulos/contenidos/calculadorav2.aspx" target="_blank" rel="noopener">Abrir calculadora <span>↗</span></a>
-        </article>
+      <div class="trust-row" aria-label="Principios de la guía">
+        <span>✓ Enlaces oficiales</span><span>✓ Sin resultados inventados</span><span>✓ Sin registro obligatorio</span>
       </div>
     </section>
-    <section class="limits">
-      <div><span class="eyebrow">LÍMITES REALES</span><h2>Lo que no existe en una sola consulta pública</h2></div>
-      <div class="limit-list"><p><b>Papeletas de todo el Perú</b><span>Cada municipalidad o SAT administra su propia información.</span></p><p><b>Estado mecánico real</b><span>Necesita inspección física de un especialista.</span></p><p><b>Todos los accidentes</b><span>La SBS muestra los reportados al seguro, no hechos nunca declarados.</span></p><p><b>Bases policiales restringidas</b><span>No son de acceso público y no se deben simular.</span></p></div>
+
+    <section class="checklist-section" id="checklist">
+      <div class="section-heading">
+        <div><span class="eyebrow">REVISIÓN GUIADA</span><h2>Checklist del vehículo</h2><p>Abre cada fuente, revisa el resultado y marca lo que encontraste.</p></div>
+        <div class="verified-date"><span>Enlaces revisados</span><strong>3 nov 2026</strong></div>
+      </div>
+
+      <div class="checklist-layout">
+        <aside class="summary-card" aria-live="polite">
+          <span class="summary-label">Resumen provisional</span>
+          <div class="traffic pending" id="traffic"><span class="traffic-dot"></span><strong>Faltan verificaciones</strong></div>
+          <p id="summaryText">Completa las seis revisiones antes de tomar una decisión.</p>
+          <div class="progress" aria-label="Progreso del checklist"><span id="progressBar"></span></div>
+          <div class="summary-counts"><span><b id="okCount">0</b> sin alerta visible</span><span><b id="warnCount">0</b> con observación</span><span><b id="pendingCount">6</b> pendientes</span></div>
+          <div class="prepared-plate"><span>Placa</span><strong id="preparedPlate">Sin ingresar</strong></div>
+          <div class="summary-actions"><button id="downloadPdf" class="action-primary">Guardar PDF</button><button id="shareSummary">Compartir</button><button id="resetChecklist" class="action-quiet">Reiniciar</button></div>
+          <small>Este semáforo organiza tus hallazgos. No certifica la situación legal o mecánica del vehículo.</small>
+        </aside>
+
+        <div class="steps" id="steps">
+          <article class="check-step" data-state="pending" data-step="sunarp">
+            <header><span class="step-number">1</span><div><span class="priority critical">Prioridad alta</span><h3>Identidad, titular y posible robo</h3></div></header>
+            <p>Compara marca, modelo, color, VIN, motor y titular con el vehículo y los documentos que te muestra el vendedor.</p>
+            <div class="step-source"><div><b>SUNARP · Consulta Vehicular</b><small>Gratis · Requiere captcha · No muestra gravámenes</small></div><a data-copy="true" href="https://consultavehicular.sunarp.gob.pe/consulta-vehicular/" target="_blank" rel="noopener">Copiar placa y abrir ↗</a></div>
+            <div class="review-options" role="group" aria-label="Resultado de identidad y titular"><button data-result="ok">Sin alerta visible</button><button data-result="warn">Encontré una observación</button><button data-result="pending" class="selected">Pendiente</button></div>
+            <label class="note-label">Tu nota <textarea placeholder="Ej.: el color no coincide con la tarjeta..."></textarea></label>
+          </article>
+
+          <article class="check-step" data-state="pending" data-step="insurance">
+            <header><span class="step-number">2</span><div><span class="priority critical">Prioridad alta</span><h3>SOAT, seguro y siniestros reportados</h3></div></header>
+            <p>Revisa si existe cobertura y si aparecen accidentes comunicados al seguro durante los últimos cinco años.</p>
+            <div class="step-source"><div><b>SBS · Reporte SOAT/CAT</b><small>Gratis · Requiere reCAPTCHA · Alcance nacional</small></div><a data-copy="true" href="https://servicios.sbs.gob.pe/reportesoat/BusquedaPlaca" target="_blank" rel="noopener">Copiar placa y abrir ↗</a></div>
+            <div class="review-options" role="group" aria-label="Resultado de SOAT y siniestros"><button data-result="ok">Sin alerta visible</button><button data-result="warn">Encontré una observación</button><button data-result="pending" class="selected">Pendiente</button></div>
+            <label class="note-label">Tu nota <textarea placeholder="Ej.: SOAT vencido o siniestro en 2024..."></textarea></label>
+          </article>
+
+          <article class="check-step" data-state="pending" data-step="inspection">
+            <header><span class="step-number">3</span><div><span class="priority">Importante</span><h3>Revisión técnica vehicular</h3></div></header>
+            <p>Comprueba la vigencia del certificado y contrasta las últimas inspecciones con lo que afirma el vendedor.</p>
+            <div class="step-source"><div><b>MTC · Consulta CITV</b><small>Gratis · Portal oficial · Alcance nacional</small></div><a data-copy="true" href="https://sistemas.mtc.gob.pe/aplicaciones/consulta-de-inspeccion-tecnica-vehicular/" target="_blank" rel="noopener">Copiar placa y abrir ↗</a></div>
+            <div class="review-options" role="group" aria-label="Resultado de revisión técnica"><button data-result="ok">Sin alerta visible</button><button data-result="warn">Encontré una observación</button><button data-result="pending" class="selected">Pendiente</button></div>
+            <label class="note-label">Tu nota <textarea placeholder="Ej.: certificado vencido o inspección rechazada..."></textarea></label>
+          </article>
+
+          <article class="check-step" data-state="pending" data-step="fines">
+            <header><span class="step-number">4</span><div><span class="priority">Importante</span><h3>Papeletas e infracciones</h3></div></header>
+            <p>Consulta SAT Lima si corresponde y el récord SUTRAN. Para otras ciudades usa la municipalidad o SAT de esa jurisdicción.</p>
+            <div class="source-pair"><div class="step-source"><div><b>SAT Lima · Papeletas</b><small>Solo provincia de Lima</small></div><a data-copy="true" href="https://www.sat.gob.pe/Websitev8/modulos/contenidos/ConsultaPapeletasv3.aspx" target="_blank" rel="noopener">Abrir SAT ↗</a></div><div class="step-source"><div><b>SUTRAN · Infracciones</b><small>No reemplaza las papeletas municipales</small></div><a data-copy="true" href="https://www.sutran.gob.pe/consultas/record-de-infracciones/record-de-infracciones/" target="_blank" rel="noopener">Abrir SUTRAN ↗</a></div></div>
+            <div class="review-options" role="group" aria-label="Resultado de papeletas"><button data-result="ok">Sin alerta visible</button><button data-result="warn">Encontré una observación</button><button data-result="pending" class="selected">Pendiente</button></div>
+            <label class="note-label">Tu nota <textarea placeholder="Ej.: papeleta pendiente de S/..."></textarea></label>
+          </article>
+
+          <article class="check-step" data-state="pending" data-step="liens">
+            <header><span class="step-number">5</span><div><span class="priority critical">Prioridad alta</span><h3>Gravámenes, embargos y títulos pendientes</h3></div></header>
+            <p>La consulta gratuita no muestra todo. Para una compra, solicita la boleta informativa oficial de SUNARP.</p>
+            <div class="step-source paid-source"><div><b>SUNARP · Boleta informativa</b><small>Requiere cuenta SPRL y pago · Documento descargable</small></div><a data-copy="true" href="https://www.gob.pe/22911-solicitar-boleta-informativa" target="_blank" rel="noopener">Ver cómo solicitarla ↗</a></div>
+            <div class="review-options" role="group" aria-label="Resultado de gravámenes"><button data-result="ok">Sin alerta visible</button><button data-result="warn">Encontré una observación</button><button data-result="pending" class="selected">Pendiente</button></div>
+            <label class="note-label">Tu nota <textarea placeholder="Ej.: embargo, garantía mobiliaria o trámite pendiente..."></textarea></label>
+          </article>
+
+          <article class="check-step" data-state="pending" data-step="physical">
+            <header><span class="step-number">6</span><div><span class="priority">Inspección final</span><h3>Documentos y revisión mecánica presencial</h3></div></header>
+            <p>Comprueba VIN y motor físicamente, revisa tarjeta de propiedad, identidad del vendedor y realiza una inspección mecánica independiente.</p>
+            <div class="physical-list"><label><input type="checkbox"> VIN y motor coinciden físicamente</label><label><input type="checkbox"> Vendedor coincide con titular o tiene poder válido</label><label><input type="checkbox"> Mecánico independiente revisó el vehículo</label><label><input type="checkbox"> Precio, condiciones y entrega quedaron por escrito</label></div>
+            <div class="review-options" role="group" aria-label="Resultado de revisión presencial"><button data-result="ok">Sin alerta visible</button><button data-result="warn">Encontré una observación</button><button data-result="pending" class="selected">Pendiente</button></div>
+            <label class="note-label">Tu nota <textarea placeholder="Ej.: ruido en motor, VIN difícil de leer..."></textarea></label>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="guides" id="guias">
+      <div class="section-heading"><div><span class="eyebrow">APRENDE ANTES DE PAGAR</span><h2>Guías para comprar con cuidado</h2><p>Explicaciones sencillas para interpretar cada consulta y detectar señales de alerta.</p></div></div>
+      <div class="guide-grid">
+        <a href="como-saber-deudas-gravamenes.html"><span>01</span><h3>Cómo saber si un auto tiene deudas o gravámenes</h3><p>Qué consulta es gratuita y cuándo necesitas una boleta informativa.</p><b>Leer guía →</b></a>
+        <a href="verificar-auto-robado.html"><span>02</span><h3>Cómo verificar si un auto tiene anotación de robo</h3><p>Qué muestra SUNARP y qué debes comparar físicamente.</p><b>Leer guía →</b></a>
+        <a href="revisar-tarjeta-propiedad.html"><span>03</span><h3>Qué revisar en la tarjeta de propiedad</h3><p>VIN, motor, titular, características y señales de inconsistencia.</p><b>Leer guía →</b></a>
+        <a href="checklist-comprar-auto-usado.html"><span>04</span><h3>Checklist para comprar un auto usado</h3><p>El orden recomendado desde la placa hasta la inspección mecánica.</p><b>Leer guía →</b></a>
+        <a href="consultar-soat-siniestros.html"><span>05</span><h3>Consultar SOAT y siniestros por placa</h3><p>Cómo usar el reporte SBS y entender sus límites.</p><b>Leer guía →</b></a>
+      </div>
+    </section>
+
+    <section class="limits" id="limites">
+      <div><span class="eyebrow">TRANSPARENCIA</span><h2>Una guía independiente, no una base de datos</h2><p>No tenemos vínculo con SUNARP, SBS, MTC, SUTRAN, SAT ni otras entidades. No vendemos antecedentes ni reemplazamos una certificación oficial o asesoría legal.</p></div>
+      <div class="limit-list"><p><b>No automatizamos captchas</b><span>Cada persona realiza la consulta directamente en la entidad.</span></p><p><b>No prometemos datos inexistentes</b><span>“Sin resultado” nunca significa automáticamente “sin deuda” o “sin riesgo”.</span></p><p><b>No sustituimos una inspección física</b><span>Los daños no reportados y el estado mecánico requieren revisión presencial.</span></p><p><b>Verifica siempre en la fuente</b><span>Los portales oficiales son la referencia válida y pueden cambiar.</span></p></div>
     </section>
   </main>
-  <footer><div class="brand"><span class="brand-mark">PV</span><span>Plaqueo <b>Vehicular</b></span></div><p>Guía informativa independiente. Verifica siempre el resultado en la entidad oficial.</p><span>© 2026</span></footer>
+
+  <footer><div class="brand"><span class="brand-mark">PV</span><span>Plaqueo <b>Vehicular</b></span></div><p>Guía informativa independiente. Verifica siempre en la entidad oficial.</p><span>© 2026</span></footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="app.js?v=5"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>
